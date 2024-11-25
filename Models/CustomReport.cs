@@ -2,8 +2,7 @@
 {
 	public class CustomReport : Report
 	{
-        public string CustomFieldOne { get; set; }
-		public string CustomFieldTwo { get; set; }
+		public List<string> CustomFields { get; set; } = [];
 
-    }
+	}
 }

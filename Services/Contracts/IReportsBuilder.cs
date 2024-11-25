@@ -8,10 +8,11 @@ namespace Services.Contracts
 {
 	public interface IReportsBuilder
 	{
-		object GenerateReportWithBuilderApproach(int reportType);
-		Dictionary<int, string> GenerateBasicFieldsForReports();
-		Dictionary<int, string> GenerateFieldsForPreconfiguredReports();
-		Dictionary<int, string> GenerateFieldsForCustomReports();
+		int payPlanId { get; set; }
+		int surveySourceId { get; set; }
+		int surveyScopeId { get; set; }
+		string BuildReportName();
+		List<string> BuildReportFields();
 
 	}
 }

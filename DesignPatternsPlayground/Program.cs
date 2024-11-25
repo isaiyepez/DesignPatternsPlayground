@@ -44,3 +44,30 @@ Console.WriteLine();
 Console.WriteLine(customReportFromFactory.Name);
 Console.WriteLine(preconfiguredReportFromFactory.Name);
 
+// ---------------------------------------------------------------------
+//----------------------Builder approach--------------------------------
+
+CustomReportBuilder customReportBuilder = new();
+PreconfiguredReportBuilder preconfiguredReportBuilder = new();
+
+ReportsBuilderDirector builderDirector = new ReportsBuilderDirector(1, 5895, 4009);
+
+CustomReport customReportFromBuilder = builderDirector.GenerateCustomReport(customReportBuilder);
+PreconfiguredReport preconfiguredReportfromBuilder = builderDirector.GeneratePreconfiguredReport(preconfiguredReportBuilder);
+
+
+Console.WriteLine();
+Console.WriteLine(customReportFromBuilder.Name);
+
+foreach (var field in customReportFromBuilder.CustomFields)
+{
+	Console.WriteLine(field);
+}
+
+Console.WriteLine(preconfiguredReportfromBuilder.Name);
+
+foreach (var field in preconfiguredReportfromBuilder.PreconfiguredFields)
+{
+	Console.WriteLine(field);
+}
+

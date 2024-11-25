@@ -2,8 +2,7 @@
 {
 	public class PreconfiguredReport : Report
 	{
-        public string PreconfiguredFieldOne { get; set; }
-		public string PreconfiguredFieldTwo { get; set; }
+        public List<string> PreconfiguredFields { get; set; } = [];
 
     }
 }
