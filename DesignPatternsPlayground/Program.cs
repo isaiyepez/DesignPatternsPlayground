@@ -71,3 +71,51 @@ foreach (var field in preconfiguredReportfromBuilder.PreconfiguredFields)
 	Console.WriteLine(field);
 }
 
+// ---------------------------------------------------------------------
+//------------------------------PROTOTYPE-------------------------------
+DevConfigPrototype myDevConfig = new DevConfigPrototype();
+ProductionConfigPrototype myProdConfig = new ProductionConfigPrototype();
+
+List<IPrototype> prototypes = new List<IPrototype>();
+
+prototypes.Add(myDevConfig);
+prototypes.Add(myProdConfig);
+
+foreach (var prototype in prototypes)
+{
+	var clonedPrototype = prototype.Clone();
+
+    Console.WriteLine();
+    Console.WriteLine($"Cloned private info, conn str: {clonedPrototype.GetConnectionString()}");
+}
+
+// ---------------------------------------------------------------------
+//----------------------Strategy approach--------------------------------
+
+CustomReportStrategy customReportStrategy = new();
+PreconfiguredReportStrategy preconfiguredReportStrategy = new();
+
+
+
+CustomReport customReportFromStrategy = (CustomReport)customReportStrategy.GenerateReport(22, 8993, 9903);
+
+PreconfiguredReport preconfiguredReportfromStrategy = (PreconfiguredReport)preconfiguredReportStrategy.GenerateReport(51, 2102, 1003);
+
+
+Console.WriteLine();
+Console.WriteLine(customReportFromStrategy.Name);
+
+foreach (var field in customReportFromStrategy.CustomFields)
+{
+    Console.WriteLine(field);
+}
+
+Console.WriteLine(preconfiguredReportfromStrategy.Name);
+
+foreach (var field in preconfiguredReportfromStrategy.PreconfiguredFields)
+{
+    Console.WriteLine(field);
+}
+
+
+
