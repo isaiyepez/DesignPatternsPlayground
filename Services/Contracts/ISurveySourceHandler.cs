@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Services.Contracts
+﻿namespace Services.Contracts
 {
-	public interface ISurveySourceHandler
+    public interface ISurveySourceHandler
 	{
 		string GetSurveySourceInformation(int payPlanId, int surveySourceId);
 	}

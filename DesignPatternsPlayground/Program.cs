@@ -118,4 +118,36 @@ foreach (var field in preconfiguredReportfromStrategy.PreconfiguredFields)
 }
 
 
+// ---------------------------------------------------------------------
+//----------------------Adapter approach--------------------------------
+
+//Using Factory service with a Strategy client with the addition of an adapter
+
+CustomReportStrategy customReportStrategyTwo = new();
+
+
+ReportsFactoryAdapterForStrategyClient adapter = new();
+ 
+
+customReportFromStrategy = (CustomReport)customReportStrategy.GenerateReport(22, 8993, 9903);
+
+// Using an Adapter to calle a service with an INCOMPATIBLE interface
+
+var preconfiguredReportfromAdapter = adapter
+	.CreatePreconfiguredReportFromFactoryService((int)ReportTypeEnums.PreconfiguredReport, reportGeneratorService);
+
+
+Console.WriteLine();
+Console.WriteLine("-------------ADAPTER----------------------");
+Console.WriteLine(customReportFromStrategy.Name);
+
+foreach (var field in customReportFromStrategy.CustomFields)
+{
+    Console.WriteLine(field);
+}
+
+Console.WriteLine(preconfiguredReportfromAdapter.Name);
+
+
+
 

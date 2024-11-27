@@ -11,12 +11,12 @@ namespace Services.Services
 		public List<string> BuildReportFields()
 		{
 			List<string> fields = new List<string>();
-			PayPlanHandler payPlanHandler = new();
-			SurveySourceHandler surveySourceHandler = new();
+            PayPlanFacadeForMassiveInterface payPlanFacade = new();
+            SurveySourceHandler surveySourceHandler = new();
 			SurveyScopeHandler surveyScopeHandler = new();
 
-			var payPlanInfo = payPlanHandler
-				.GetPayPlanInformation(payPlanId);
+			var payPlanInfo = payPlanFacade
+				.GetPayPlan(payPlanId);
 
 			var surveySourceInfo = surveySourceHandler
 				.GetSurveySourceInformation(payPlanId, surveySourceId);
