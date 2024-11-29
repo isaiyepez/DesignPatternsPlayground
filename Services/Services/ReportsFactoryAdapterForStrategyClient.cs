@@ -1,11 +1,6 @@
 ﻿using Models;
 using Models.Enums;
 using Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Services
 {
@@ -15,7 +10,7 @@ namespace Services.Services
         {
            
             return (PreconfiguredReport)reportGeneratorService
-    .GenerateReportWithFactoryApproach((int)ReportTypeEnums.PreconfiguredReport);
+                        .GenerateReportWithFactoryApproach((int)ReportTypeEnums.PreconfiguredReport);
         }
     }
 }

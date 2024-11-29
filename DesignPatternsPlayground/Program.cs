@@ -41,6 +41,7 @@ PreconfiguredReport preconfiguredReportFromFactory = (PreconfiguredReport)report
 	.GenerateReportWithFactoryApproach((int)ReportTypeEnums.PreconfiguredReport);
 
 Console.WriteLine();
+Console.WriteLine("---------------Factory Approach---------------");
 Console.WriteLine(customReportFromFactory.Name);
 Console.WriteLine(preconfiguredReportFromFactory.Name);
 
@@ -57,6 +58,8 @@ PreconfiguredReport preconfiguredReportfromBuilder = builderDirector.GeneratePre
 
 
 Console.WriteLine();
+Console.WriteLine("------------------Builder Approach------------------");
+
 Console.WriteLine(customReportFromBuilder.Name);
 
 foreach (var field in customReportFromBuilder.CustomFields)
